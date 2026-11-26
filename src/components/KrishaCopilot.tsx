@@ -227,16 +227,13 @@ export function KrishaCopilot() {
     setTimeout(() => {
       switch (action.type) {
         case "navigate":
-          setOpen(false);
           router.push(action.path);
           break;
         case "scroll": {
           const el = document.getElementById(action.id);
           if (el) {
-            setOpen(false);
             el.scrollIntoView({ behavior: "smooth", block: "start" });
           } else {
-            setOpen(false);
             router.push(`/#${action.id}`);
           }
           break;
